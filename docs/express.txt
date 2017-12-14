@@ -1,0 +1,115 @@
+Building a server with Express.js is very, very easy.
+All you really have to do is, of course,
+you need to install Express so,
+you install it with NPM and then you
+import it using require method.
+You save it in a variable called Express,
+so later you can instantiate Express app,
+typically, we use the app variable and then,
+you can define your routes.
+So first of all, let's define
+the home route which is just a slash.
+It's also called a route, route.
+As the second argument,
+you would see the request handler,
+res.send instead of end,
+we can use send which is a little bit more
+advanced than just sending a plain text.
+It will also add the headers,
+and then app.listen, that's what will boot up the server.
+Okay. So, when you're just starting this project,
+Express application, you need to install Express.
+All right. How do you do that?
+NPM init, that's the very first thing
+that I would do in every new project.
+And then, npm i express,
+space, dash E. Why E?
+That's for exact version.
+I'm using NPM version five,
+so I don't need to add S which is for safe dependency.
+And now, in my package.json,
+I have the exact version of Express.
+So that's pretty much it.
+Let me go and save this file server.js,
+and now I can use node-dev.
+If you haven't installed node-dev,
+you can install it with
+either globally or locally as well.
+Node-dev, save it, and even
+better would be to add D
+which stands for Development dependency.
+Development dependency meaning,
+when we push it to production,
+we don't need it, we can just keep
+it by adding dash dash production flag.
+So, the devDependencies is node-dev
+and I can also add it here,
+node-dev server.js, so this would be my command.
+But, on most computers,
+people don't have this folder
+configured node_modules/bin.
+So let me add it just to make sure
+all my coworkers and people who pulls this project,
+the student's etcetera, etcetera,
+they can also launch this node-dev, okay?
+So just making it more robust.
+NPM start, this is how we'll
+launch this script, NPM start.
+It's just an alias for this long command,
+node-dev server.js, and you can
+see this at the command, node-dev server.js.
+Okay, so that should be running.
+Let me open a new terminal and go ahead,
+and curl to that.
+Okay. So, it says cannot get to transactions.
+So you can see that Express is very picky.
+It would not allow me to specify any path,
+cURL HTTP would do that but with Express,
+you need to be very careful what path are you using.
+Trailing slashes are okay,
+but anything except the trailing slash would cause,
+cannot get, and then the name of that path,
+the name of that URL.
+And this is my output on the server.
+It's nothing because I don't have any console logs,
+I don't have any log in here.
+So that's what probably would be the next step,
+and we can also add -i to get more information.
+So we see ETag.
+What is ETag?
+ETag, that's a special caching mechanism
+that express automatically adds.
+The browsers use it to determine whether
+it's the same response
+or it's a new, it has been changed.
+Then we see Content-Type, Content-Length, etcetera.
+What is different between send and end?
+So, we can also use a different method,
+and because I'm using node-dev,
+the server has been automatically restarted.
+So you can see now the headers are gone,
+some of them are gone,
+so Content-Type is gone.
+So that's what send is doing.
+It's adding extra headers and it's also adding that ETag.
+You can still see X-Powered-By: Express,
+you can modify it for security.
+You can say, PHP to confuse attackers.
+Okay. So send, send will make sure that the type is good,
+the type is correct.
+So for example, if it's json,
+it will also use the proper time.
+So let's change it to Json now.
+And now you can see that, it's application json.
+So you can see Express's doing a lot
+of things automatically for
+you and it is just a nicer way to organize your routes.
+You don't need to have a lot of if else conditions.
+It's also very easy to pull this function into
+a module especially when
+you use this function many, many times.
+It's better to modularize it
+and then just use it by the name.
+So that's it for the video.
+In the next videos, we will see at
+more complex Express examples.
